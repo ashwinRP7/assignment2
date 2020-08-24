@@ -48,7 +48,8 @@ class Shopping extends React.Component{
             rightCol = <img src={cartimg} ></img>;
         }
         else{
-            rightCol = <CartList obj={this.state.cartItem} remove1={()=>this.removeFromCart({i:1}) } remove2={()=>this.removeFromCart({i:2}) } remove3={()=>this.removeFromCart({i:3}) } remove4={()=>this.removeFromCart({i:4}) } remove5={()=>this.removeFromCart({i:5}) } remove6={()=>this.removeFromCart({i:6}) } remove7={()=>this.removeFromCart({i:7}) } remove8={()=>this.removeFromCart({i:8}) }/>;
+            
+            rightCol = <CartList obj={{array:this.state.cartItem , removeFromCart:this.removeFromCart.bind(this)} } />;
         }
 
         let btnstyle = {margin:'20px'}
